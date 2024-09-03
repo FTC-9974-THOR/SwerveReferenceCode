@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * This is a minimal example of what it takes to get a swerve running.
  */
-@TeleOp(name = "Swerve TeleOp")
+@TeleOp(name = "Swerve TeleOp (Simplified)")
 public class SwerveTeleOpSimple extends OpMode {
 
     private Swerve swerve;

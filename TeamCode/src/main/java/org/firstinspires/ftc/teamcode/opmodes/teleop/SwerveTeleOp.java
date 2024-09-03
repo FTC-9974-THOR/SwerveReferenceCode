@@ -18,10 +18,8 @@ import org.ftc9974.thorcore.util.BooleanEdgeDetector;
 import java.util.List;
 
 /**
- * This is an example code for a teleop with the swerve.
- *
- * This is basically what the swerve was running at CRI, and it allows for on-the-fly switching
- * between drive handedness and field/robot relative driving.
+ * This is an example code for a teleop with the swerve. Allows for on-the-fly switching of drive
+ * handedness and field/robot relative driving.
  */
 @TeleOp(name = "Swerve TeleOp")
 public class SwerveTeleOp extends OpMode {

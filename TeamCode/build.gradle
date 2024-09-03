@@ -30,7 +30,7 @@ repositories {
 dependencies {
     implementation project(':FtcRobotController')
     annotationProcessor files('lib/OpModeAnnotationProcessor.jar')
-    implementation files("lib/ThorCore-1.0.1.aar") // for some reason the library shows up under the name "G" in external libraries
+    implementation files("lib/ThorCore-1.0.2.aar") // for some reason the library shows up under the name "G" in external libraries
     implementation "com.acmerobotics.dashboard:dashboard:0.4.14"
     implementation "com.acmerobotics.roadrunner:core:0.5.6"
 }
