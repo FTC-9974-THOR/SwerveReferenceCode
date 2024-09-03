@@ -18,21 +18,19 @@ import org.ftc9974.thorcore.util.MathUtilities;
 
 public class Swerve implements HolonomicDrivetrainRR {
 
-    private static final double WHEEL_RADIUS = 76.0 / 2.0;
-    private static final double GEAR_RATIO = 3.7 * 2;
+    private static final double WHEEL_RADIUS = 76.2 / 2.0;
+    private static final double GEAR_RATIO = 3.7 * (44.0/36) * 2;
     private static final double MOTOR_FREE_SPEED = MathUtilities.rpmToRadPerSec(6000);
     private static final double TRACK_WIDTH = 2 * 132.8;
     private static final double WHEELBASE = 2 * 132.8;
 
-    private static final double FULL_SPEED = WHEEL_RADIUS * MOTOR_FREE_SPEED / GEAR_RATIO;
-
     private static final PIDFCoefficients COEFS = new PIDFCoefficients(0.17, 0, 0, 0);
     private static final SwerveModule2.GainSchedule GAIN_SCHEDULE = SwerveModule2.constantGains(COEFS);
 
-    public static final double FULL_LINEAR_SPEED = FULL_SPEED;
-    public static final double FULL_ANGULAR_SPEED = FULL_SPEED / Math.hypot(0.5 * TRACK_WIDTH, 0.5 * WHEELBASE);
+    public static final double FULL_LINEAR_SPEED = WHEEL_RADIUS * MOTOR_FREE_SPEED / GEAR_RATIO;
+    public static final double FULL_ANGULAR_SPEED = FULL_LINEAR_SPEED / Math.hypot(0.5 * TRACK_WIDTH, 0.5 * WHEELBASE);
     public static final SwerveVelocityConstraint VELOCITY_CONSTRAINT = new SwerveVelocityConstraint(
-            FULL_SPEED, TRACK_WIDTH
+            FULL_LINEAR_SPEED, TRACK_WIDTH
     );
 
     public final SwerveDrive2 rb;
